@@ -1,1 +1,0 @@
-docker run -it -v $PWD:/root/ ubuntu:18.04

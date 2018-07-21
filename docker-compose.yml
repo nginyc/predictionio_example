@@ -1,6 +1,14 @@
 version: '3'
 services:
-  main:
+  pio:
     build: .
     volumes:
-    - .:/root/app
+      - .:/root/app
+    ports:
+      - "8000:8000"
+  db:
+    image: 'postgres:10.4'
+    environment:
+      - POSTGRES_USER=pio
+      - POSTGRES_PASSWORD=pio
+      - POSTGRES_DB=pio
