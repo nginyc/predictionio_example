@@ -8,5 +8,6 @@ docker run --name pio \
   -e POSTGRES_USER=$POSTGRES_USER \
   -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
   -e POSTGRES_DB=$POSTGRES_DB \
+  -p 7070:7070 \
   -p 8000:8000 \
   pio

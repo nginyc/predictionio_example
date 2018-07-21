@@ -5,10 +5,10 @@ WORKDIR /root/app
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-# Install system dependencies
+# Install system dependencies & utilities
 RUN apt-get update
-RUN apt-get install -y --auto-remove --no-install-recommends curl openjdk-8-jdk libgfortran3 python-pip
-RUN apt-get install -y dos2unix
+RUN apt-get install -y --auto-remove --no-install-recommends curl openjdk-8-jdk libgfortran3 python-pip python-setuptools
+RUN apt-get install -y dos2unix git vim
 
 ENV PIO_HOME /root/app/PredictionIO-0.12.1
 
@@ -36,3 +36,6 @@ RUN curl -O http://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.6.tgz \
 # Configure Prediction.IO
 COPY ./dockerfile-config/pio-env.sh ${PIO_HOME}/conf/pio-env.sh
 RUN dos2unix ${PIO_HOME}/conf/pio-env.sh
+
+EXPOSE 7070
+EXPOSE 8080
