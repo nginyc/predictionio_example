@@ -1,0 +1,1 @@
+winpty docker run -it -v .:/root/ ubuntu:18.04
