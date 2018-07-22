@@ -1,4 +1,6 @@
-# Apache PredicionIO Example
+# Apache PredicionIO Example (WIP)
+
+**This is still Work In Progress!!**
 
 ## Installation
 
